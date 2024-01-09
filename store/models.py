@@ -45,6 +45,7 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
+    
 
     @property
     def get_total(self):
@@ -63,3 +64,37 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return self.address
+
+class Package(models.Model):
+    name = models.CharField(max_length=255)
+    products = models.ManyToManyField(Product, through='PackageItem')
+    price = models.FloatField()
+    
+
+    def __str__(self):
+        return self.name
+
+
+class PackageItem(models.Model):
+    package = models.ForeignKey(Package, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
+
+class OrderPackage(models.Model):
+    package = models.ForeignKey(Package, on_delete=models.SET_NULL, blank=True, null=True)
+    order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)
+    quantity = models.IntegerField(default=0, null=True, blank=True)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def get_total(self):
+        total = self.product.price*self.quantity
+        return total
+    
+
+class Customization(models.Model):
+    font = models.CharField(max_length=50,null=True, blank=True)
+    color = models.CharField(max_length=50,null=True, blank=True)
+    text = models.CharField(max_length=200,null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
+    item = models.OneToOneField(OrderItem, on_delete=models.CASCADE,null=True, blank=True)

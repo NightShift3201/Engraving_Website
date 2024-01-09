@@ -29,6 +29,7 @@
 					<div style="flex:1"><strong>Price</strong></div>
 					<div style="flex:1"><strong>Quantity</strong></div>
 					<div style="flex:1"><strong>Total</strong></div>
+					<div style="flex:1"><strong>Customize</strong></div>
 				</div>
 				
 				{% for item in items %}
@@ -45,6 +46,7 @@
 						</div>
 					</div>
 					<div style="flex:1"><p>${{item.get_total|floatformat:2}}</p></div>
+					<div style="flex:1"><a  class="btn btn-success" >Customize</a></div>
 				</div>
 				{% endfor %}
 			</div>

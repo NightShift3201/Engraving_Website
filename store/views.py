@@ -9,7 +9,8 @@ def home(request):
 def menu(request):
     return render(request, 'store/menu.html')
 
-def packages(request):
+def packages(request, package_name):
+    #package = Package.objects.get(name=package_name)
     return render(request, 'store/packages.html')
 
 def individual_products(request):
