@@ -1,5 +1,17 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-    <h3>Package</h3>
+    <h1>{{ package.name }}</h1>
+
+    <img src="{{ package.image.url }}" alt="{{ package.name }} Image" style="max-width: 300px;">
+
+    <p>Price: ${{ package.price }}</p>
+
+    <h2>Package Items</h2>
+    <ul>
+        {% for package_item in package.packageitem_set.all %}
+            <li>{{ package_item.quantity }} x {{ package_item.product.name }}</li>
+        {% endfor %}
+    </ul>
+
 {% endblock content %}

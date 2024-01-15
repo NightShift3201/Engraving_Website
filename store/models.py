@@ -69,6 +69,7 @@ class Package(models.Model):
     name = models.CharField(max_length=255)
     products = models.ManyToManyField(Product, through='PackageItem')
     price = models.FloatField()
+    image = models.ImageField(null=True, blank=True)
     
 
     def __str__(self):
