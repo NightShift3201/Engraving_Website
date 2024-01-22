@@ -1,7 +1,7 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-    <div class="row">
+    <div class="row row-container">
 		{% for package in packages %}
 		<div class="col-lg-4">
 			<img class="thumbnail" src="{{package.image.url}}">
