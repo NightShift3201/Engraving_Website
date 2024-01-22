@@ -43,7 +43,7 @@ h1,h2,h3,h4,h5,h6{
 	display: inline-block;
 	text-align: center;
 	color:#fff;
-	background-color: red;
+	/* background-color: red; */
 	width: 20px;
 	height: 25px;
 	border-radius: 50%;
@@ -124,7 +124,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .main_title {
-	background-color: red;
+	/* background-color: red; */
 	font-size: 60px;
 
 }
@@ -222,7 +222,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .Advertisement {
-	background-color: lightcoral;
+	/* background-color: lightcoral; */
 	margin-top: 50px;
 	height: 470px;
 	position: relative;
@@ -237,7 +237,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .display_Section {
-	background-color: red;
+	/* background-color: red; */
 	margin-top: 10px;
 	text-align: center;
 	
@@ -249,7 +249,7 @@ h1,h2,h3,h4,h5,h6{
 
 .reasons_choose {
 	display: flex;
-	background-color: green;
+	/* background-color: green; */
 	justify-content: space-between;
 	margin-left: 100px;
 	margin-right: 100px;
@@ -291,7 +291,7 @@ h1,h2,h3,h4,h5,h6{
 	display: grid;
 	grid-template-columns: 500px 1fr;
 	column-gap: 20px;
-	background-color: cyan;
+	/* background-color: cyan; */
 }
 
 .grid2_box h2{
@@ -302,7 +302,7 @@ h1,h2,h3,h4,h5,h6{
 
 
 .Advertisement2 {
-	background-color: lightcoral;
+	/* background-color: lightcoral; */
 	margin-top: 50px;
 	height: 500px;
 	position: relative;
@@ -311,7 +311,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .display_Section2 {
-	background-color: red;
+	/* background-color: red; */
 	margin-top: 10px;
 	text-align: center;
 	
@@ -324,7 +324,7 @@ h1,h2,h3,h4,h5,h6{
 
 .reasons_choose2 {
 	display: flex;
-	background-color: green;
+	/* background-color: green; */
 	justify-content: space-between;
 	margin-left: 100px;
 	margin-right: 100px;
@@ -371,11 +371,11 @@ h1,h2,h3,h4,h5,h6{
 
 /* Pop out CSS */
 
-.model_pop-out {
+.modal2 {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%) scale(1); /*change scale to 0 */
+	transform: translate(-50%, -50%) scale(0); /*change scale to 0 */
 	transition: 200ms ease-in-out;
 	border: 1px solid black;
 	border-radius: 10px;
@@ -385,7 +385,7 @@ h1,h2,h3,h4,h5,h6{
 	max-width: 80%;
 }
 
-.model_pop-out.active {
+.modal2.active {
 	transform: translate(-50%, -50%) scale(1);
 }
 
@@ -402,7 +402,7 @@ h1,h2,h3,h4,h5,h6{
 	font-weight: bold;
 }
 
-.close_button-model {
+.close-button {
 	cursor: pointer;
 	border: none;
 	outline: none;
@@ -411,14 +411,14 @@ h1,h2,h3,h4,h5,h6{
 	font-weight: bold;
 }
 
-.model-body {
+.modal-body {
 	padding: 10px 15px;
 }
 
 #overlay {
 	position: fixed;
 	transition: 200ms ease-in-out;
-	/*opacity: 0; */
+	opacity: 0; /* should be 1 */
 	top: 0;
 	left: 0;
 	right: 0;

@@ -48,19 +48,19 @@
 						</div>
 					</div>
 					<div style="flex:1"><p>${{item.get_total|floatformat:2}}</p></div>
-					<div style="flex:1"><a  class="btn btn-success" >Customize</a></div>
+					<div style="flex:1"><button data-modal-target="#modal" class="btn btn-success" >Customize</button></div>
 				</div>
 				{% endfor %}
 			</div>
         </div>
     </div>
 
-	<div class = "model_pop-out">
+	<div class = "modal2" id="modal">
 		<div class = "model-header">
 			<div class = "model_title">Customize Product</div>
-			<button class = "close_button-model">&times;</button>
+			<button data-close-button class = "close-button">&times;</button>
 		</div>
-		<div class = "model-body">
+		<div class = "modal-body">
 			<form>
 				<p class = "text_former">Message that you would like engraved</p>
    				<input type="text" id="ftext" name="firstname" placeholder="Please include text you would like engraved. ">
@@ -78,10 +78,6 @@
 
 
 			</form>
-			
-
-
-
 		</div>
 	</div>
 	<div id="overlay"></div>
