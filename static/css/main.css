@@ -112,10 +112,8 @@ h1,h2,h3,h4,h5,h6{
 .container12 {
 	padding-right: 0;
 	margin-top: 20px;
-	background-color: lightpink;
 	margin-right: 40px;
 	margin-left: 40px;
-
 }
 
 
@@ -131,7 +129,9 @@ h1,h2,h3,h4,h5,h6{
 
 }
 
-img {
+.images img, 
+.main_products img,
+.main_packages img {
 	width: 400px;
 	margin-left: 40px;
 
@@ -369,6 +369,93 @@ img {
 	width: 200px;
 }
 
+/* Pop out CSS */
+
+.model_pop-out {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1); /*change scale to 0 */
+	transition: 200ms ease-in-out;
+	border: 1px solid black;
+	border-radius: 10px;
+	z-index: 10;
+	background-color: white;
+	width: 800px;
+	max-width: 80%;
+}
+
+.model_pop-out.active {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.model-header {
+	padding: 10px 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid black;
+}
+
+.model_title {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.close_button-model {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: none;
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.model-body {
+	padding: 10px 15px;
+}
+
+#overlay {
+	position: fixed;
+	transition: 200ms ease-in-out;
+	/*opacity: 0; */
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .5);
+	pointer-events: none;
+}
+
+#overlay.active {
+	opacity: 1;
+	pointer-events: all;
+}
+
+#ftext {
+	width: 100%;
+	padding-bottom: 50px;
+}
+
+.text_former {
+	margin-bottom: 0px;
+}
+
+.model-body input {
+	margin-bottom: 10px;
+}
+
+.text_former2 {
+	display: inline;
+}
+
+#fname1 {
+	width: 44%;
+}
+
+#fname2 {
+	width: 44%;
+}
 
 
 
