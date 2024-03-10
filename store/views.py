@@ -3,6 +3,7 @@ from django.http import JsonResponse
 import json
 
 from .models import *
+from .utils import cookieCart
 
 
 # Create your views here.
@@ -33,9 +34,9 @@ def packages(request, package_name):
         items = order.orderitem_set.all()
         cartItems = order.get_cart_items
     else:
-        items = []
-        order = {'get_cart_total':0,'get_cart_items':0}
-        cartItems=order['get_cart_items']
+        cookieData = cookieCart(request)
+        cartItems = cookieData['cartItems']
+
     package = Package.objects.get(name=package_name)
     context = {'package': package, 'cartItems':cartItems}
     return render(request, 'store/packages.html', context)
@@ -47,9 +48,9 @@ def individual_products(request):
         items = order.orderitem_set.all()
         cartItems = order.get_cart_items
     else:
-        items = []
-        order = {'get_cart_total':0,'get_cart_items':0}
-        cartItems=order['get_cart_items']
+        cookieData = cookieCart(request)
+        cartItems = cookieData['cartItems']
+
     products = Product.objects.all()
     context = {'products': products, 'cartItems':cartItems}
     return render(request, 'store/individual_products.html', context)
@@ -62,9 +63,11 @@ def cart(request):
         items = order.orderitem_set.all()
         cartItems = order.get_cart_items
     else:
-        items = []
-        order = {'get_cart_total':0,'get_cart_items':0}
-        cartItems=order['get_cart_items']
+        cookieData = cookieCart(request)
+        cartItems = cookieData['cartItems']
+        order = cookieData['order']
+        cartItems = cookieData['items']
+
 
     context = {'items': items, 'order':order, 'cartItems':cartItems}
 
@@ -77,9 +80,10 @@ def checkout(request):
         items = order.orderitem_set.all()
         cartItems = order.get_cart_items
     else:
-        items = []
-        order = {'get_cart_total':0,'get_cart_items':0}
-        cartItems=order['get_cart_items']
+        cookieData = cookieCart(request)
+        cartItems = cookieData['cartItems']
+        order = cookieData['order']
+        cartItems = cookieData['items']
 
     context = {'items': items, 'order':order, 'cartItems':cartItems}
     return render(request, 'store/checkout.html', context)

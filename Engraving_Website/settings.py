@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n0tax^t_o3&kdxldg1voy7@f=_%k00jy(92)$a(rn8fkaew^sd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['143.198.156.160']
 
 
 # Application definition
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'Engraving_Website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'engravingdb',
+        'USER': 'isaac',
+        'PASSWORD': 'B6E;%w0)f82o',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -119,10 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = "/home/isaac/engraving/static/"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
