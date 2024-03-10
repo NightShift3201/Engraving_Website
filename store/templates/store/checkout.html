@@ -68,4 +68,33 @@
 			</div>
 		</div>
 	</div>
+
+<script>
+	var form = document.getElementById('form')
+
+	form.addEventListener('submit', function(e){
+		
+	})
+	function submitFormData(){
+
+		var userFormData = {
+			'name':null,
+			'email':null,
+			'total':total
+
+		}
+
+		var shippingInfo = {
+			'address':form.address.value,
+			'city':form.city.value,
+			'state':form.state.value,
+			'zipcode':form.zipcode.value
+		}
+
+		if(user == "AnonymousUser"){
+			userFormData.name = form.address.value
+			userFormData.email = form.email.value
+		}
+	}
+</script>
 {% endblock content %}
