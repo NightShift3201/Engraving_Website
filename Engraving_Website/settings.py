@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'Engraving_Website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'engravingDB',
+        'NAME': 'engravingdb',
         'USER': 'isaac',
         'PASSWORD': 'B6E;%w0)f82o',
         'HOST': 'localhost',
