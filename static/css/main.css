@@ -131,7 +131,24 @@ h1,h2,h3,h4,h5,h6{
 	grid-template-columns: 1fr 500px;
 	column-gap: 20px;
 	margin-top: 15px;
+	display: relative;
 }
+
+.grid_box::before {
+	content: "";
+	background-image: url('../images/testerimage.jpg');
+	background-size: cover;
+	height: 650px;
+
+	opacity: 0.2;
+  	top: 0;
+  	left: 0;
+  	bottom: 0;
+  	right: 0;
+  	position: absolute;
+	z-index: -1;
+}
+
 
 .main_title {
 	/* background-color: red; */
@@ -151,15 +168,19 @@ h1,h2,h3,h4,h5,h6{
 .learn_more {
 	margin-left: 30px;
 	margin-top: 30px;
-	border-radius: 20px;
-	height: 45px;
-	width: 130px;
-	background-color: #e1e7a7;
+	border-radius: 30px;
+	height: 60px;
+	width: 150px;
+	background-color: #f9ffbb;
+	font-size: 24px;
+	font-family:'Times New Roman', Times, serif;
 }
 
 .description_title {
 	margin-left: 30px;
 	margin-top: 16px;
+	font-size: 22px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 .lower_title {
@@ -172,9 +193,9 @@ h1,h2,h3,h4,h5,h6{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	margin-top: 50px;
-	height: 400px;
+	height: 530px;
 	column-gap: 20px;
-	background-color: lightblue;
+	/* background-color: lightblue; for outline */
 }
 
  
@@ -187,13 +208,22 @@ h1,h2,h3,h4,h5,h6{
 
 }
 
+
 .main_packages {
 	border-color: black;
 	border-width: 1px;
 	border-style: solid;
 	display: grid;
 	grid-template-columns: 1fr 400px;
+
+	background-image: url('.../images/packages_display.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	background-color: rgb(34, 31, 31);
+
 }
+
 
 .main__container h2 {
 	margin-top: 30px;
@@ -203,25 +233,34 @@ h1,h2,h3,h4,h5,h6{
 .main_packages p {
 	margin-left: 40px;
 	margin-top: 60px;
-	font-size: 45px;
+	font-size: 60px;
+	font-weight: bold;
+	color: white;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .main_products p {
 	margin-left: 40px;
-	font-size: 45px;
+	font-size: 60px;
 	margin-top: 130px;
 	width: 50%;
+	font-weight: bold;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main_products img {
 	width: 380px;
-	margin-left: 0px;
+	margin-left: -90px;
+	margin-top: 60px;
 }
 
 .products_individual-text button {
 	margin-top: 20px;
 	margin-left: 45px;
 	font-size: 24px;
+	font-weight: bold;
+	font-family:'Times New Roman', Times, serif;
 	width: 150px;
 	height: 70px;
 	border-radius: 60px;
@@ -231,6 +270,8 @@ h1,h2,h3,h4,h5,h6{
 .packages_individual-text button {
 	font-size: 24px;
 	margin-top: 20px;
+	font-weight: bold;
+	font-family:'Times New Roman', Times, serif;
 	margin-left: 45px;
 	width: 150px;
 	height: 70px;
@@ -241,14 +282,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .main_packages img {
-	margin-top: 90px;
-	margin-left: 0px;
+	margin-top: 125px;
+	margin-left: -50px;
 }
 
 .Advertisement {
 	/* background-color: lightcoral; */
 	margin-top: 50px;
-	height: 470px;
+	height: 500px;
 	position: relative;
 	
 	/*
@@ -257,6 +298,26 @@ h1,h2,h3,h4,h5,h6{
 	background-repeat: no-repeat;
 
 	*/
+}
+
+.Advertisement::before {
+	content: "";
+	/*
+	background-image: url('../images/cups_jurassic.jpeg');
+	background-size: cover;
+	background-position: middle;
+	height: 500px;
+	*/
+
+	background-color:#f0f3f9;
+
+	opacity: 1;
+  	top: 0;
+  	left: 0;
+  	bottom: 0;
+  	right: 0;
+  	position: absolute;
+	z-index: -1;
 
 }
 
@@ -285,19 +346,24 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .reasons_to_choose {
-	margin-top: 50px;
+	margin-top: 30px;
 
 	width: 300px;
 }
 
 .images_for_reasons img{
-	width: 150px;
-	height: 150px;
+	width: 200px;
+	height: 200px;
 	object-fit: cover;
-	border-radius: 75px;
-	margin-left: 75px;
+	border-radius: 100px;
+	margin-left: 47px;
 	margin-bottom: 10px;
 	margin-top: 10px;
+}
+
+.aT {
+	object-fit: contain;
+	object-position: top;
 }
 
 .title_reasons {
