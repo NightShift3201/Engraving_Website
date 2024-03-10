@@ -103,6 +103,10 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
+.row-container{
+	width:75%
+}
+
 /* Main Page Section */
 
 .main {
@@ -115,6 +119,10 @@ h1,h2,h3,h4,h5,h6{
 	margin-top: 20px;
 	margin-right: 40px;
 	margin-left: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 }
 
 
