@@ -265,6 +265,7 @@ h1,h2,h3,h4,h5,h6{
 	height: 70px;
 	border-radius: 60px;
 	background-color: #ffd7b5;
+	color: black;
 }
 
 .packages_individual-text button {
@@ -277,8 +278,11 @@ h1,h2,h3,h4,h5,h6{
 	height: 70px;
 	border-radius: 60px;
 	background-color: #ffd7b5;
+	text-decoration: none;
+}
 
-
+.packages_individual-text a{
+	color: black;
 }
 
 .main_packages img {
