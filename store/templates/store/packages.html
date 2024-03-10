@@ -1,17 +1,67 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-    <h1>{{ package.name }}</h1>
+    
 
-    <img src="{{ package.image.url }}" alt="{{ package.name }} Image" style="max-width: 300px;">
 
-    <p>Price: ${{ package.price }}</p>
+    <div class = "display_packages">
 
-    <h2>Package Items</h2>
-    <ul>
-        {% for package_item in package.packageitem_set.all %}
-            <li>{{ package_item.quantity }} x {{ package_item.product.name }}</li>
-        {% endfor %}
-    </ul>
+        <div class = "first_section_package">
+            <img src="{{ package.image.url }}" alt="{{ package.name }} Image" >
+        </div>
+
+        <div class = "packages_titler">
+            <h1 class = "package_name">{{ package.name }}</h1>
+
+            <hr width="100%" size="2">
+
+            <p>Price: ${{ package.price }}</p>
+
+            <h2>Package Items</h2>
+            <ul>
+                {% for package_item in package.packageitem_set.all %}
+                    <li>{{ package_item.quantity }} x {{ package_item.product.name }}</li>
+                {% endfor %}
+            </ul>
+
+            <hr width="100%" size="2">
+
+            <div>
+
+            </div>
+
+            
+
+            <p>
+                Description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet alias obcaecati deleniti, suscipit aspernatur eos perspiciatis neque velit ut, laborum omnis molestias, iste eius qui similique placeat sapiente quasi distinctio.
+            </p>
+
+
+            <button class = "package_add_cart"> Add to Cart </button>
+
+        </div>
+
+    </div>
+
+    <!--
+
+
+    
+
+    <div class = "related_products">
+
+        <h2 class = "section_other_products">
+            Related Products
+        </h2>
+
+    </div>
+
+-->
+
+
+
+
+
+    
 
 {% endblock content %}

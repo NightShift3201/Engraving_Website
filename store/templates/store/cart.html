@@ -62,20 +62,33 @@
 		</div>
 		<div class = "modal-body">
 			<form>
-				<p class = "text_former">Message that you would like engraved</p>
+				<p class = "text_former">Message that you would like engraved: </p>
    				<input type="text" id="ftext" name="firstname" placeholder="Please include text you would like engraved. ">
 
-				<p class = "text_former2">Color: </p>
-   				<input type="text" id="fname1" name="firstname" placeholder="Color ">
+				<div class = "color_coder">
+					<p class = "text_former2">Color: </p>
+   					<input type="text" id="fname1" name="firstname" placeholder="Color ">
+				</div>
+				
 
-				<p class = "text_former2">Font: </p>
-   				<input type="text" id="fname2" name="firstname" placeholder="Font ">
+				<div class = "color_coder2">
+					<p class = "text_former2">Font: </p>
+					<select id="selecth1FontFamily" name="selectFontFamily" onchange="updateh1family();">
+						<option> Serif </option>
+						<option> Arial </option>
+						<option> Sans-Serif </option>                                  
+						<option> Tahoma </option>
+						<option> Verdana </option>
+						<option> Lucida Sans Unicode </option>                               
+					</select>
 
+				</div>
+				
+
+				<p class = "text_former">Upload Logo </p>
 				<input type="file" id="myFile" name="filename">
 
-				<input type="submit">
-
-
+				<button type="submit" id="submission_modal">Submit</button>
 
 			</form>
 		</div>
